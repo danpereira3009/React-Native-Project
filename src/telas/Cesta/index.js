@@ -1,49 +1,30 @@
 import React from 'react';
 import { StyleSheet, Image, Dimensions, Text, View } from 'react-native'
-import Texto from '../components/Texto'
-import topo from '../../assets/topo.png'
-import logo from '../../assets/logo.png'
-
-const width = Dimensions.get('screen').width
+import Texto from '../../components/Texto'
+import Topo from './components/Topo'
+import logo from '../../../assets/logo.png'
 
 export default function Cesta() {
     return <>
-    <Image source={topo} style={estilos.topo} />
-    <Texto style={estilos.titulo}>Detalhes da </Texto>
+    <Topo />
     <View style={estilos.cesta}>
-        <Text style={estilos.nome}>Cesta de Verduras</Text>
+        <Texto style={estilos.nome}>Cesta de Verduras</Texto>
             <View style={estilos.fazenda}>
-                
                 <Image style={estilos.imagemFazenda} source={logo} />
-                <Text style={estilos.local}>Jenny Jack Farm</Text>
-
+                <Texto style={estilos.local}>Jenny Jack Farm</Texto>
             </View>
         <Texto style={estilos.descricao}>Uma cesta de produtos selecionados</Texto>
-        <Text style={estilos.valor}>R$40,00</Text>
+        <Texto style={estilos.valor}>R$60,00</Texto>
     </View>
     </>
 }
 
 const estilos = StyleSheet.create({
-    topo: {
-        width: "100%",
-        height: 578 / 768 * width
-    },
-    titulo: {
-        position: "absolute",
-        textAlign: "center",
-        width: "100%",
-        color: "white",
-        fontSize: 20,
-        marginTop: 10,
-        fontWeight: "bold"
-    },
-
     nome: {
         fontSize: 26,
         lineHeight: 46,
         color: "#464646",
-        fontFamily: "MontserratBold"
+        fontWeight: "bold"
     },
 
     local: {
